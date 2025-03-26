@@ -211,7 +211,8 @@ void editStudentRecord() {
 
     printf("\n");
     int found = 0;
-    for (int i = 0; i < count; i++) {
+    int i;
+    for (i = 0; i < count; i++) {
         if (strcasecmp(students[i].lastName, search) == 0) {
             found = 1;
             printf("Editing record for %s %s %s:\n\n", students[i].firstName, students[i].middleName, students[i].lastName);
@@ -255,10 +256,12 @@ void deleteStudentRecord() {
     search[strcspn(search, "\n")] = '\0';
 
     int found = 0;
-    for (int i = 0; i < count; i++) {
+    int i;
+    for (i = 0; i < count; i++) {
         if (strcasecmp(students[i].lastName, search) == 0) {
             found = 1;
-            for (int j = i; j < count - 1; j++) {
+            int j;
+            for (j = i; j < count - 1; j++) {
                 students[j] = students[j + 1];  // shift left
             }
             count--;
@@ -302,7 +305,8 @@ void saveStudentsToFile(Student students[], int count) {
     }
 
     fprintf(file, "First Name,Middle Name,Last Name,English,Filipino,Math,Science,Average\n");
-    for (int i = 0; i < count; i++) {
+    int i;
+    for (i = 0; i < count; i++) {
         fprintf(file, "\"%s\",\"%s\",\"%s\",%.2f,%.2f,%.2f,%.2f,%.2f\n",
                 students[i].firstName, students[i].middleName, students[i].lastName,
                 students[i].english, students[i].filipino, students[i].math,

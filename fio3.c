@@ -7,7 +7,8 @@ Appending Data
 int main() {
     FILE *pWrite = fopen("hobbies.dat", "a");
     if (pWrite != NULL) {
-        fprintf(pWrite, "Sam Guitar\n");
+        fprintf(pWrite, "SMCC Bigger, Better, Stronger, Holier\n");
+        printf("Successfully appending a text in hobbies.dat file");
         fclose(pWrite);
     }    
     
